@@ -1,0 +1,36 @@
+<body>
+<div class="row" id="global">
+	<div class="col-md-6">
+		<h1>Zoek het Rijksmuseum</h1>
+		<h4>en maak een tocht tussen de wereld beroemd (of juist onbekend!) mooiste schilderijen en kunstwerk...</h4>
+		<div id="center-input">
+			<input type="text" #keyword class="form-control-lg" placeholder="naam kunstenaar..."
+				(keyup.enter)="searchArtworks(keyword.value)" >
+			<button class="btn btn-primary" (click)="searchArtworks(keyword.value)">Zoek</button>
+		</div>
+		<div id="cadre1">
+		<ul class="list-group">
+			<li *ngFor="let artwork of artworks" class="list-group-item"
+				(click)="showArtworkDetails(artwork)">
+				{{ artwork.name}} <br>
+				<img src="{{artwork.urlImg}}" alt="afbeelding ontbreekt --" class="img-thumbnail moviePoster" height=150 width=150>
+				{{ artwork.author}}
+				<br> <br>
+			</li>
+		</ul>
+		<h3 id="center-nothingtodeclare" *ngIf="artworks?.length == 0">
+			Sorry, er is geen kunstwerk<br> van deze kunstenaar <br> gevonden in de collectie
+		</h3>
+		</div>
+	</div>
+
+	<div class="col-md-6" id="cadre2">
+			<div *ngIf="selectedArtwork">
+				<artwork-details
+						[artwork]="selectedArtwork">
+				</artwork-details>
+			</div>
+		</div>
+	
+</div>
+</body>

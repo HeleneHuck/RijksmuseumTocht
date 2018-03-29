@@ -1,0 +1,44 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+    background-color: beige;
+}
+h1 {
+    color: blue;
+    text-align:center;
+}
+
+h4 {
+    color: gray;
+    font-style: italic;
+    text-align:center;
+}
+
+#global
+{
+    width: 1200px;
+    border: solid rgb(32, 9, 112) 1px;
+}
+ 
+#cadre1
+{
+    height: 3000px;
+    width: 550px;
+    float: left;
+}
+ 
+#cadre2
+{
+    height: 3000px;
+    width: 600px;
+    margin-left: 600px;
+}
+
+#center-input
+{
+    margin-left: 500px;
+}
+
+#center-nothingtodeclare
+{
+    margin-left: 250px;
+}
